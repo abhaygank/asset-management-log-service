@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/v1/logs/assignments")
@@ -19,7 +20,7 @@ public class AssignmentLogController {
     }
 
     @GetMapping("/{assetId}")
-    public ResponseEntity<List<AssignmentLog>> getLogs(@PathVariable String assetId) {
+    public ResponseEntity<List<AssignmentLog>> getLogs(@PathVariable UUID assetId) {
         return ResponseEntity.ok(service.getLogsByAssetId(assetId));
     }
 }

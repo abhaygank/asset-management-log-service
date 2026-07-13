@@ -9,6 +9,7 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class AssignmentLogService {
@@ -20,7 +21,7 @@ public class AssignmentLogService {
         repository.save(log);
     }
 
-    public List<AssignmentLog> getLogsByAssetId(String assetId) {
+    public List<AssignmentLog> getLogsByAssetId(UUID assetId) {
         return repository.findByAssetIdOrderByTimestampDesc(assetId);
     }
 }

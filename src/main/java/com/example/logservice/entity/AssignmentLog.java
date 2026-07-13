@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
 @Table(name = "assignment_logs")
@@ -14,8 +15,8 @@ public class AssignmentLog {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long logId;
     private Long assignmentId;
-    private String assetId;
-    private Long userId;
+    private UUID assetId;
+    private UUID userId;
     private String action;
     private LocalDateTime timestamp;
 }

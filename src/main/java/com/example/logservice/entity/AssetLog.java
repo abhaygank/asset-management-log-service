@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
 @Table(name = "asset_logs")
@@ -12,7 +13,7 @@ import java.time.LocalDateTime;
 public class AssetLog {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long logId;
-    private String assetId;
+    private UUID assetId;
     private String action;
     private LocalDateTime timestamp;
     private String details;

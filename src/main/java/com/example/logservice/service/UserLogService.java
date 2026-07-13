@@ -7,6 +7,7 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class UserLogService {
@@ -18,7 +19,7 @@ public class UserLogService {
         repository.save(log);
     }
 
-    public List<UserLog> getLogsByUserId(Long userId) {
+    public List<UserLog> getLogsByUserId(UUID userId) {
         return repository.findByUserIdOrderByTimestampDesc(userId);
     }
 }
