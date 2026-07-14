@@ -1,7 +1,5 @@
 package com.example.logservice.service;
 
-
-
 import com.example.logservice.entity.AssignmentLog;
 import com.example.logservice.repository.AssignmentLogRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +21,10 @@ public class AssignmentLogService {
 
     public List<AssignmentLog> getLogsByAssetId(UUID assetId) {
         return repository.findByAssetIdOrderByTimestampDesc(assetId);
+    }
+
+    
+    public List<AssignmentLog> getLogsByEmail(String email) {
+        return repository.findByEmailOrderByTimestampDesc(email);
     }
 }

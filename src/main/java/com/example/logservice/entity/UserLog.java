@@ -13,7 +13,7 @@ import java.util.UUID;
 public class UserLog {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long logId;
-    private UUID userId;
+    private String email;
     private String action;
     private LocalDateTime timestamp;
     private String details;

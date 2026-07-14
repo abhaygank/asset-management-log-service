@@ -16,7 +16,7 @@ public class AssignmentLog {
     private Long logId;
     private Long assignmentId;
     private UUID assetId;
-    private UUID userId;
+    private String email;
     private String action;
     private LocalDateTime timestamp;
 }

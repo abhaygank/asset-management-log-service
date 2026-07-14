@@ -23,4 +23,9 @@ public class AssignmentLogController {
     public ResponseEntity<List<AssignmentLog>> getLogs(@PathVariable UUID assetId) {
         return ResponseEntity.ok(service.getLogsByAssetId(assetId));
     }
+
+    @GetMapping("/users/{email}")
+    public ResponseEntity<List<AssignmentLog>> getLogsByEmail(@PathVariable String email) {
+        return ResponseEntity.ok(service.getLogsByEmail(email));
+    }
 }
