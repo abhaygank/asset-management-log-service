@@ -1,7 +1,5 @@
 package com.example.logservice.entity;
 
-
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,7 +13,10 @@ import java.util.UUID;
 public class MaintenanceLog {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long logId;
-    private UUID maintenanceId;
+
+
+    private Long maintenanceId;
+
     private UUID assetId;
     private String status;
     private LocalDateTime timestamp;
